@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keep It Up! Cheat Pack – one-click mod, hotkeys and control panel</title>
+<meta name="description" content="Unofficial cheat pack for Keep It Up! (Steam, Windows): god mode, infinite lives, balloon control, super slap, speed, fly and more. One-click installer, hotkeys and a control panel.">
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--fg:#1b1e27;--mute:#5d6577;--acc:#6b4cf0;--acc2:#4b32c9;--line:#e1e4ee;--code:#eef0f7;--ok:#16a34a;--warn:#b45309;--bad:#dc2626}
+@media (prefers-color-scheme:dark){:root{--bg:#12141a;--card:#1b1e27;--fg:#e8eaf0;--mute:#9aa2b6;--acc:#8b74ff;--acc2:#a493ff;--line:#2b3040;--code:#242938;--ok:#4ade80;--warn:#fbbf24;--bad:#f87171}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}a:hover{color:var(--acc2)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:18px;align-items:center;overflow-x:auto;padding-top:12px;padding-bottom:12px;white-space:nowrap}
+nav b{margin-right:auto}nav a{text-decoration:none;color:var(--mute);font-size:14px}nav a:hover{color:var(--fg)}
+header{padding:64px 0 40px;text-align:center}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.1;margin:0 0 14px}
+h1 span{color:var(--acc)}
+.lead{font-size:19px;color:var(--mute);max-width:680px;margin:0 auto 26px}
+.btn{display:inline-block;background:var(--acc);color:#fff;padding:13px 26px;border-radius:10px;font-weight:600;text-decoration:none;margin:4px}
+.btn:hover{background:var(--acc2);color:#fff}.btn.alt{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.badges{margin-top:22px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.badges span{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:3px 12px;font-size:13px;color:var(--mute)}
+section{padding:38px 0;border-top:1px solid var(--line)}
+h2{font-size:28px;margin:0 0 6px}h3{font-size:18px;margin:26px 0 6px}
+.sub{color:var(--mute);margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card h3{margin:0 0 4px;font-size:16px}.card p{margin:0;color:var(--mute);font-size:14.5px}
+kbd{background:var(--code);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 7px;font:13px ui-monospace,Consolas,monospace}
+code{background:var(--code);padding:1px 6px;border-radius:5px;font:13.5px ui-monospace,Consolas,monospace}
+pre{background:var(--code);padding:14px 16px;border-radius:10px;overflow-x:auto;font:13.5px/1.5 ui-monospace,Consolas,monospace}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:9px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mute);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.04em}tr:last-child td{border-bottom:0}
+.y{color:var(--ok);font-weight:600}.m{color:var(--warn);font-weight:600}.n{color:var(--bad);font-weight:600}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:4px 0 14px 52px}
+.steps li:before{content:counter(s);position:absolute;left:0;top:2px;width:34px;height:34px;border-radius:50%;background:var(--acc);color:#fff;font-weight:700;display:grid;place-items:center}
+.note{border-left:4px solid var(--warn);background:var(--card);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+.note.red{border-color:var(--bad)}.note.green{border-color:var(--ok)}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:8px 0;padding:0 16px}
+summary{cursor:pointer;padding:12px 0;font-weight:600}details[open] summary{border-bottom:1px solid var(--line);margin-bottom:10px}
+details p,details ul{margin:0 0 12px}
+footer{padding:34px 0 50px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Keep It Up! Cheat Pack</b><a href="#features">Features</a><a href="#install">Install</a><a href="#hotkeys">Hotkeys</a><a href="#panel">Panel</a><a href="#multiplayer">Multiplayer</a><a href="#troubleshooting">Troubleshooting</a><a href="#how">How it works</a></nav>
+
+<header><div class="wrap">
+<h1>Keep It Up! <span>Cheat Pack</span></h1>
+<p class="lead">An unofficial mod for the Steam co-op balloon game: god mode, infinite lives, balloon control, super slap, speed, fly and more. Installs in one double-click, with hotkeys and a control panel.</p>
+<a class="btn" data-gh="/releases/latest/download/KeepItUp-Cheat-Installer.zip" href="https://github.com">Download installer (15&nbsp;MB)</a>
+<a class="btn alt" data-gh="" href="https://github.com">View on GitHub</a>
+<div class="badges"><span>Windows 10 / 11</span><span>Steam</span><span>Unreal Engine 5.7</span><span>Built on UE4SS</span><span>Free &amp; open</span></div>
+</div></header>
+
+<section id="features"><div class="wrap">
+<h2>What you get</h2><p class="sub">Every feature has a hotkey and a button in the control panel.</p>
+<div class="grid">
+<div class="card"><h3>God mode</h3><p>Uses the game’s own developer cheat, so the balloon can drop without ending the run.</p></div>
+<div class="card"><h3>Infinite lives</h3><p>Keeps your lives topped up to 99, and the panel can add +1, +5 or +25 on demand.</p></div>
+<div class="card"><h3>Balloon control</h3><p>Stop it from ever touching the ground, freeze it in mid-air, pull it to your crosshair, or bring it to you.</p></div>
+<div class="card"><h3>Super slap</h3><p>Stronger hits, longer reach and no cooldown. Every multiplier is adjustable with a slider.</p></div>
+<div class="card"><h3>Speed and jump</h3><p>Faster walking and sprinting plus higher jumps, with separate sliders for each.</p></div>
+<div class="card"><h3>Fly / noclip</h3><p>Float around, walk through geometry, and nudge up or down. Includes a forward dash.</p></div>
+<div class="card"><h3>Skip rooms</h3><p>Trigger the elevator skip, or teleport to the game’s built-in developer waypoints.</p></div>
+<div class="card"><h3>Unlock cosmetics</h3><p>Unlocks every cosmetic in one click.</p></div>
+<div class="card"><h3>Control panel</h3><p>A small always-on-top window with live status: lives, room, balloon count and whether you are solo, host or guest.</p></div>
+</div></div></section>
+
+<section id="install"><div class="wrap">
+<h2>Install</h2><p class="sub">Takes about 30 seconds. You need the game on Steam, on Windows.</p>
+<ol class="steps">
+<li><b>Download and extract.</b> Get <code>KeepItUp-Cheat-Installer.zip</code> from the button above and extract the <em>whole</em> zip (right-click → Extract All). Do not run it from inside the zip.</li>
+<li><b>Close the game, then run <code>Install.bat</code>.</b> It finds the game in any Steam library. If it can’t, a folder window opens: pick the game folder (the one that contains <code>ProjectLiftoff.exe</code>).</li>
+<li><b>Start the game from Steam.</b> The control panel opens by itself. Play in <em>Windowed</em> or <em>Borderless</em> mode so the panel is visible over the game.</li>
+</ol>
+<div class="note"><b>Python (optional, for the panel only).</b> The panel window needs Python 3. The installer checks for it and can install it with winget. Without Python everything still works through the hotkeys. If the panel doesn’t open the first time after installing Python, restart Steam once so it picks up the new install.</div>
+<h3>What the installer changes</h3>
+<p>Inside <code>…\ProjectLiftoff\Binaries\Win64\</code> it adds <code>dwmapi.dll</code> and a <code>ue4ss</code> folder (the mod loader plus this mod). It never touches game files, saves or Steam itself. If you already have UE4SS there, it keeps your install and only adds the mod.</p>
+<h3>Manual install</h3>
+<p>Prefer to do it by hand? Open the zip’s <code>payload</code> folder and copy its contents (<code>dwmapi.dll</code> and the <code>ue4ss</code> folder) into <code>ProjectLiftoff\Binaries\Win64\</code>, next to <code>ProjectLiftoff-Win64-Shipping.exe</code>. The mod is already enabled in the bundled <code>mods.txt</code>.</p>
+<h3>Uninstall</h3>
+<p>Run <code>Uninstall.bat</code>. It removes the mod, and removes UE4SS too only if the installer was the one that added it.</p>
+</div></section>
+
+<section id="hotkeys"><div class="wrap">
+<h2>Hotkeys</h2><p class="sub">Work any time you are in a level. Each toggle shows an on-screen notification.</p>
+<div class="tw"><table>
+<tr><th>Key</th><th>Action</th></tr>
+<tr><td><kbd>F1</kbd></td><td>God mode on/off</td></tr>
+<tr><td><kbd>F2</kbd></td><td>Infinite lives on/off</td></tr>
+<tr><td><kbd>F3</kbd></td><td>Balloon never drops on/off</td></tr>
+<tr><td><kbd>F4</kbd></td><td>Freeze / unfreeze the balloon</td></tr>
+<tr><td><kbd>F5</kbd> &nbsp; <kbd>Ctrl</kbd>+<kbd>F5</kbd></td><td>Move balloon to your crosshair &nbsp;/&nbsp; to you</td></tr>
+<tr><td><kbd>F6</kbd></td><td>Super slap on/off</td></tr>
+<tr><td><kbd>F7</kbd></td><td>Speed and jump boost on/off</td></tr>
+<tr><td><kbd>F8</kbd></td><td>Fly / noclip on/off (<kbd>PgUp</kbd> / <kbd>PgDn</kbd> move up and down)</td></tr>
+<tr><td><kbd>F9</kbd></td><td>Skip the room (elevator skip)</td></tr>
+<tr><td><kbd>F10</kbd> &nbsp; <kbd>Shift</kbd>+<kbd>F10</kbd></td><td>Teleport to the next / previous developer waypoint</td></tr>
+<tr><td><kbd>Home</kbd></td><td>Dash forward</td></tr>
+<tr><td><kbd>Insert</kbd> (or <kbd>Ctrl</kbd>+<kbd>F11</kbd>)</td><td>Unlock all cosmetics</td></tr>
+<tr><td><kbd>F11</kbd></td><td>Write a state dump to the log (useful for bug reports)</td></tr>
+</table></div>
+<p class="sub" style="margin-top:12px"><kbd>F12</kbd> is left unused on purpose, because Steam uses it for screenshots.</p>
+</div></section>
+
+<section id="panel"><div class="wrap">
+<h2>The control panel</h2>
+<p class="sub">A separate window that talks to the mod through two small text files, so it can never crash the game.</p>
+<div class="grid">
+<div class="card"><h3>Cheats tab</h3><p>Checkboxes for every toggle that follow the real in-game state (they update when you use a hotkey), action buttons, lives buttons, movement buttons and a waypoint picker.</p></div>
+<div class="card"><h3>Strength &amp; settings tab</h3><p>Sliders for speed, sprint, jump, slap force, slap reach, fly speed, dash distance and the up/down step. Changes apply a moment after you let go.</p></div>
+<div class="card"><h3>Status line</h3><p>Shows <em>Connected</em> plus lives, room, balloon count and mode (solo, host or guest). It closes itself about 45 seconds after the game exits.</p></div>
+</div>
+<p style="margin-top:14px">Don’t want it to open automatically? In <code>ue4ss\Mods\KeepItUpCheat\Scripts\main.lua</code> set <code>AUTO_LAUNCH_PANEL = false</code>. You can still open <code>KeepItUpPanel.pyw</code> by hand.</p>
+</div></section>
+
+<section id="multiplayer"><div class="wrap">
+<h2>Solo, host and guest</h2>
+<p class="sub">Co-op games let the host’s copy of the game decide most things, so what works depends on your role.</p>
+<div class="tw"><table>
+<tr><th>Feature</th><th>Solo</th><th>Host</th><th>Guest</th></tr>
+<tr><td>God mode, lives, skip room, unlock cosmetics</td><td class="y">Yes</td><td class="y">Yes</td><td class="m">Unconfirmed</td></tr>
+<tr><td>Freeze balloon, balloon to crosshair / to you</td><td class="y">Yes</td><td class="y">Yes</td><td class="m">Unconfirmed</td></tr>
+<tr><td>Balloon never drops</td><td class="y">Yes</td><td class="y">Yes</td><td class="n">Unlikely</td></tr>
+<tr><td>Super slap</td><td class="y">Yes</td><td class="y">Yes</td><td class="n">Unlikely</td></tr>
+<tr><td>Speed, jump, fly / noclip, dash</td><td class="y">Yes</td><td class="y">Yes</td><td class="m">May rubber-band</td></tr>
+</table></div>
+<div class="note"><b>Be honest with your friends.</b> The author tested the mod in solo on the demo. Host and guest behaviour comes from how the game’s code is built, not exhaustive testing. As a guest, some requests go through the game’s server calls, and the host may ignore them. Please don’t use it to spoil other people’s games.</div>
+<div class="note green"><b>No anti-cheat.</b> The game folder contains none, so offline and private-lobby use has no ban system to trip. Use it at your own risk anyway, and stay out of public matchmaking.</div>
+</div></section>
+
+<section id="troubleshooting"><div class="wrap">
+<h2>Troubleshooting</h2>
+<p class="sub">Most problems are answered here. The log is always at <code>…\Binaries\Win64\ue4ss\UE4SS.log</code>.</p>
+<details><summary>Nothing happens in game / no hotkeys</summary><p>Check that <code>dwmapi.dll</code> sits right next to <code>ProjectLiftoff-Win64-Shipping.exe</code> and the <code>ue4ss</code> folder is beside it. Open <code>UE4SS.log</code> and look for <em>Loaded v1.3</em>. If it’s missing, run <code>Install.bat</code> again. Hotkeys only work while you are in a level, not in the main menu.</p></details>
+<details><summary>The panel doesn’t open</summary><ul><li>The log line <em>Launching panel: ok</em> means the mod tried. Make sure Python 3 is installed (python.org, tick “Add python.exe to PATH”), then restart Steam once.</li><li>Open <code>KeepItUpPanel.pyw</code> by hand: right-click → Open with → Python, tick “Always use this app”.</li><li>The panel is hidden behind the game: switch the game to Windowed or Borderless.</li></ul></details>
+<details><summary>The panel says “Waiting for game” or “Folder not found”</summary><p>Click the <em>Strength &amp; settings</em> tab → <em>Browse</em> and pick <code>…\ue4ss\Mods\KeepItUpCheat</code>. “Waiting” while the game is running means the mod isn’t loaded: see the first item.</p></details>
+<details><summary>The game crashes on launch</summary><p>Send the last 50 lines of <code>UE4SS.log</code> in an issue. As a quick test, run <code>Uninstall.bat</code>: if the game then starts normally, the mod loader is the cause. Also try an antivirus exception for the game folder (below).</p></details>
+<details><summary>Antivirus flags dwmapi.dll</summary><p>UE4SS loads by replacing the <code>dwmapi.dll</code> the game would normally pick up, which security tools sometimes treat as suspicious. It is open source (<a href="https://github.com/UE4SS-RE/RE-UE4SS">UE4SS-RE/RE-UE4SS</a>). Add the game folder as an exclusion if yours quarantines it, then run the installer again.</p></details>
+<details><summary>A game update broke it</summary><p>The mod relies on the game’s internal class names, so an update can change them. Uninstall until a new version is posted, and open an issue with the new game version. Updated class dumps make fixes fast.</p></details>
+<details><summary>Fly / noclip: I’m stuck or can’t pick things up</summary><p>Noclip turns collision off, which also disables room triggers and pickups. Turn it off (<kbd>F8</kbd>) to progress; you’ll drop back to normal movement.</p></details>
+<details><summary>A cheat does nothing</summary><p>Press <kbd>F11</kbd> in the level, then check <code>UE4SS.log</code>. Each action logs which method it used (<em>cheatmgr</em>, <em>rpc</em> or <em>direct</em>) or why it failed. Attach that when you open an issue. If you’re a guest in someone else’s lobby, see <a href="#multiplayer">Solo, host and guest</a>.</p></details>
+</div></section>
+
+<section id="how"><div class="wrap">
+<h2>How it works</h2>
+<p class="sub">For the curious and for anyone who wants to fix or extend it.</p>
+<h3>The pieces</h3>
+<ul>
+<li><b>UE4SS</b> (build <code>v3.0.1-1190-gf673aac0</code>) is a mod loader for Unreal Engine games. It hooks in through <code>dwmapi.dll</code> and runs Lua mods.</li>
+<li><b><code>KeepItUpCheat</code></b> is a Lua mod (<code>Scripts/main.lua</code>). It registers the hotkeys and re-applies held effects every 400 ms.</li>
+<li><b><code>KeepItUpPanel.pyw</code></b> is a Python/Tkinter window. It sends commands to the mod and shows its state.</li>
+</ul>
+<h3>Why it needs so few guesses</h3>
+<p>The shipped game contains its own developer cheat manager (<code>PLCheatManager</code>: god mode, add life, elevator skip, unlock cosmetics, waypoint teleport…) plus matching server calls on the player controller. The mod calls those first, then falls back to the server RPC, then to setting values directly, and logs which path worked.</p>
+<h3>The panel link</h3>
+<pre>gui_cmd.txt    panel → mod    "&lt;id&gt; set god 1", "&lt;id&gt; act skip_room", "&lt;id&gt; cfg speedMult 3.0"
+gui_state.txt  mod → panel    key=value lines (lives, room, toggles, settings…), ends with END</pre>
+<p>Command ids only ever increase, and the mod ignores anything already in the file when it starts, so a restart never replays old commands. All numeric settings are clamped to safe ranges.</p>
+<h3>Tested with</h3>
+<p>Keep It Up! Demo on Steam, Unreal Engine 5.7.4, Windows. Other versions of the game may need an updated mod.</p>
+<h3>Build from source</h3>
+<p>The mod is plain Lua and the panel is plain Python, so there is no build step. Copy <code>Mods/KeepItUpCheat</code> into <code>ue4ss/Mods</code>. In UE4SS’s settings, <code>EnableHotReloadSystem = 1</code> lets you reload the mod from the UE4SS window while the game runs.</p>
+</div></section>
+
+<footer><div class="wrap">
+<p><b>Unofficial fan project.</b> Not affiliated with or endorsed by the game’s developer or publisher. “Keep It Up!” belongs to its owners. Provided as is, with no warranty; use at your own risk.</p>
+<p>Credits: <a href="https://github.com/UE4SS-RE/RE-UE4SS">UE4SS</a> by the UE4SS-RE team (MIT licence). <a data-gh="/issues" href="https://github.com">Report a problem</a></p>
+</div></footer>
+
+<script>
+(function(){
+  var h=location.hostname,p=location.pathname.split('/').filter(Boolean);
+  if(/\.github\.io$/.test(h)){
+    var o=h.split('.')[0],r=p[0]||h,b='https://github.com/'+o+'/'+r;
+    document.querySelectorAll('[data-gh]').forEach(function(a){a.href=b+a.getAttribute('data-gh');});
+  }
+})();
+</script>
+</body>
+</html>
